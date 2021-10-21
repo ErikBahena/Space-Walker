@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# Design files and what now
+/Reference
+
 # production
 /build
 
