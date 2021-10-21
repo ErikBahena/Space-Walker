@@ -3,6 +3,7 @@
   --dark-color: rgb(11, 13, 23);
   --light-purple: rgb(208, 214, 249);
   --white-color: rgb(255, 255, 255);
+  --white-color-opac50: rgba(255, 255, 255, 0.5);
 }
 
 /* General Styles */
@@ -51,8 +52,8 @@ h5 {
 
 h5,
 subh2,
-navText,
-navBold {
+.navText,
+.navBold {
   font-family: "Barlow Condensed", sans-serif;
 }
 
@@ -65,10 +66,10 @@ subh2 {
   letter-spacing: 2.35px;
 }
 
-navText {
+.navText {
   font-size: 16px;
   letter-spacing: 2.7px;
 }
-navBold {
+.navBold {
   font-weight: bold;
 }

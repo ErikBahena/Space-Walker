@@ -10,6 +10,9 @@ import Home from "./Components/Home/Home.js";
 
 // Background Images
 import homeBackground from "./assets/home/background-home-desktop.jpg";
+import destinationBackground from "./assets/destination/background-destination-desktop.jpg";
+import crewBackground from "./assets/crew/background-crew-desktop.jpg";
+import technologyBackground from "./assets/technology/background-technology-desktop.jpg";
 
 const StyledApp = styled.div`
   .wrapper {
@@ -23,9 +26,18 @@ const StyledApp = styled.div`
   .homeBg {
     background-image: url(${homeBackground});
   }
+  .destinationBg {
+    background-image: url(${destinationBackground});
+  }
+  .crewBg {
+    background-image: url(${crewBackground});
+  }
+  .technologyBg {
+    background-image: url(${technologyBackground});
+  }
 `;
 
-export default function () {
+export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
 
   return (
