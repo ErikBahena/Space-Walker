@@ -8,22 +8,36 @@ import styled from "styled-components";
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home/Home.js";
 
+// Background Images
+import homeBackground from "./assets/home/background-home-desktop.jpg";
+
 const StyledApp = styled.div`
-  height: 100vh;
-  border: 5px solid red;
+  .wrapper {
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .homeBg {
+    background-image: url(${homeBackground});
+  }
 `;
 
 export default function () {
   const [currentPage, setCurrentPage] = useState("home");
 
   return (
-    <StyledApp className={currentPage + "Bg"}>
-      <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-      </Switch>
+    <StyledApp>
+      <div className={`wrapper ${currentPage + "Bg"}`}>
+        <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
     </StyledApp>
   );
 }
