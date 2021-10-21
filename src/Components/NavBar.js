@@ -98,17 +98,17 @@ export default function NavBar({ currentPage, setCurrentPage }) {
             <b className="navBold">00</b> Home
           </p>
         </Link>
-        <Link to="/" data-name="destination">
+        <Link to="/destination" data-name="destination">
           <p className="navText">
             <b className="navBold">01</b> Destination
           </p>
         </Link>
-        <Link to="/" data-name="crew">
+        <Link to="/crew" data-name="crew">
           <p className="navText">
             <b className="navBold">02</b> Crew
           </p>
         </Link>
-        <Link to="/" data-name="technology">
+        <Link to="/technology" data-name="technology">
           <p className="navText">
             <b className="navBold">03</b> Technology
           </p>
