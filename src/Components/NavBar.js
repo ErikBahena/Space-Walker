@@ -25,6 +25,20 @@ const StyledNav = styled.nav`
     width: 57.6388%;
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(81.5485px);
+
+    navText {
+      text-transform: uppercase;
+    }
+
+    a:nth-of-type(1) {
+      margin-right: 48px;
+    }
+    a:nth-of-type(2) {
+      margin-right: 48px;
+    }
+    a:nth-of-type(3) {
+      margin-right: 48px;
+    }
   }
 `;
 
@@ -33,7 +47,26 @@ export default function NavBar({ currentPage, setCurrentPage }) {
     <StyledNav>
       <img className="nav-logo" src={NavLogo} />
       <div className="nav-links-container">
-        <Link to="/">Home</Link>
+        <Link to="/">
+          <navText>
+            <navBold>00</navBold> Home
+          </navText>
+        </Link>
+        <Link to="/">
+          <navText>
+            <navBold>01</navBold> Destination
+          </navText>
+        </Link>
+        <Link to="/">
+          <navText>
+            <navBold>02</navBold> Crew
+          </navText>
+        </Link>
+        <Link to="/">
+          <navText>
+            <navBold>03</navBold> Technology
+          </navText>
+        </Link>
       </div>
     </StyledNav>
   );
