@@ -5,8 +5,9 @@ import { Switch, Route } from "react-router";
 import styled from "styled-components";
 
 // Components
-import NavBar from "./Components/NavBar";
+import NavBar from "./Components/NavBar.js";
 import Home from "./Components/Home/Home.js";
+import Destination from "./Components/Destination/Destination.js";
 
 // Background Images
 import homeBackground from "./assets/home/background-home-desktop.jpg";
@@ -45,8 +46,12 @@ export default function App() {
       <div className={`wrapper ${currentPage + "Bg"}`}>
         <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
         <Switch>
-          <Route exact path="/">
-            <Home />
+          <Route path="/destination">
+            <Destination />
+          </Route>
+
+          <Route path="/">
+            <Home setCurrentPage={setCurrentPage} />
           </Route>
         </Switch>
       </div>

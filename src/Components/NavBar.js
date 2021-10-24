@@ -91,24 +91,39 @@ export default function NavBar({ currentPage, setCurrentPage }) {
         <Link
           to="/"
           data-name="home"
-          //   defaults this link to have this classname based on the current state
+          //   if the current page is the the corresponding link then add that classname
           className={currentPage === "home" ? "active-nav-link" : null}
         >
           <p className="navText">
             <b className="navBold">00</b> Home
           </p>
         </Link>
-        <Link to="/destination" data-name="destination">
+
+        <Link
+          to="/destination"
+          data-name="destination"
+          className={currentPage === "destination" ? "active-nav-link" : null}
+        >
           <p className="navText">
             <b className="navBold">01</b> Destination
           </p>
         </Link>
-        <Link to="/crew" data-name="crew">
+
+        <Link
+          to="/crew"
+          data-name="crew"
+          className={currentPage === "crew" ? "active-nav-link" : null}
+        >
           <p className="navText">
             <b className="navBold">02</b> Crew
           </p>
         </Link>
-        <Link to="/technology" data-name="technology">
+
+        <Link
+          to="/technology"
+          data-name="technology"
+          className={currentPage === "technology" ? "active-nav-link" : null}
+        >
           <p className="navText">
             <b className="navBold">03</b> Technology
           </p>
