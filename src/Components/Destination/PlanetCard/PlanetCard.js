@@ -42,7 +42,6 @@ export default function PlanetCard({ planetName }) {
   });
 
   useEffect(() => {
-    console.log("im initial");
     setData({
       title: planetsData[planetName].title,
     });

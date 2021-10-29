@@ -67,7 +67,7 @@ export default function Destination() {
       </h5>
 
       <div className="flex-wrapper">
-        <img src={currentPlanet.img} />
+        <img src={currentPlanet.img} alt={"the planet " + currentPlanet.name} />
 
         <div className="planet-card-container">
           <InnerNavBar handlePlanetChange={handlePlanetChange} />
