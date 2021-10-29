@@ -27,7 +27,7 @@ const StyledNav = styled.nav`
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(81.5485px);
 
-    navText {
+    .navText {
       text-transform: uppercase;
     }
 

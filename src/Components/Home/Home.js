@@ -10,10 +10,6 @@ const StyledHomeView = styled.main`
 
   h5 {
     color: var(--light-purple);
-    font-style: normal;
-    font-weight: normal;
-    line-height: 34px;
-    letter-spacing: 4.725px;
   }
 
   article {
@@ -22,9 +18,6 @@ const StyledHomeView = styled.main`
 
     h1 {
       color: var(--white-color);
-      font-style: normal;
-      font-weight: normal;
-      line-height: 172px;
       margin-bottom: 5%;
     }
 

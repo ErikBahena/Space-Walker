@@ -22,6 +22,7 @@ const StyledApp = styled.div`
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: black;
   }
 
   .homeBg {
@@ -45,6 +46,7 @@ export default function App() {
     <StyledApp>
       <div className={`wrapper ${currentPage + "Bg"}`}>
         <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+
         <Switch>
           <Route path="/destination">
             <Destination />

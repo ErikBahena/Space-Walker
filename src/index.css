@@ -39,10 +39,16 @@ h4,
 
 h1 {
   font-size: 150px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 172px;
 }
 
 h2 {
   font-size: 100px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 115px;
 }
 
 h3 {
@@ -55,6 +61,10 @@ h4 {
 
 h5 {
   font-size: 28px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 34px;
+  letter-spacing: 4.725px;
 }
 
 h5,
@@ -66,11 +76,21 @@ h5,
 
 .subh1 {
   font-size: 28px;
+
+  font-style: normal;
+  font-weight: normal;
+  line-height: 32px;
+  text-transform: uppercase;
 }
 
 .subh2 {
   font-size: 14px;
-  letter-spacing: 2.35px;
+
+  font-style: normal;
+  font-weight: normal;
+  line-height: 17px;
+  letter-spacing: 2.3625px;
+  text-transform: uppercase;
 }
 
 .navText {
