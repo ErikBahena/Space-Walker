@@ -23,6 +23,9 @@ const StyledApp = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-color: black;
+
+    -webkit-transition: background-image 0.2s ease-in-out;
+    transition: background-image 0.2s ease-in-out;
   }
 
   .homeBg {
@@ -52,7 +55,7 @@ export default function App() {
             <Destination />
           </Route>
 
-          <Route path="/">
+          <Route exact path="/">
             <Home setCurrentPage={setCurrentPage} />
           </Route>
         </Switch>
