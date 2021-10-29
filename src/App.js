@@ -15,6 +15,9 @@ import destinationBackground from "./assets/destination/background-destination-d
 import crewBackground from "./assets/crew/background-crew-desktop.jpg";
 import technologyBackground from "./assets/technology/background-technology-desktop.jpg";
 
+// Hooks
+import useLocalStorage from "./hooks/useLocalStorage.js";
+
 const StyledApp = styled.div`
   .wrapper {
     height: 100vh;
@@ -43,7 +46,7 @@ const StyledApp = styled.div`
 `;
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useLocalStorage("currentPage", "home");
 
   return (
     <StyledApp>

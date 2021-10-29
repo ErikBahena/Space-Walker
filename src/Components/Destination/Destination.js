@@ -25,7 +25,7 @@ const StyledDestination = styled.div`
   }
 
   .flex-wrapper {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
