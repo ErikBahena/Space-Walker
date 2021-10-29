@@ -6,6 +6,29 @@ import planetsData from "./planetsData";
 
 const StyledPlanetCard = styled.div`
   color: white;
+
+  h2 {
+    margin-top: 37px;
+    margin-bottom: 14px;
+  }
+
+  p:nth-of-type(1) {
+    max-width: 444px;
+  }
+
+  hr {
+    width: 100%;
+    border-color: var(--light-purple);
+    max-width: 444px;
+  }
+
+  .vectors-container {
+    display: flex;
+
+    div:nth-of-type(1) {
+      margin-right: 79px;
+    }
+  }
 `;
 
 export default function PlanetCard({ planetName }) {

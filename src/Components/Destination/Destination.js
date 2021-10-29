@@ -25,7 +25,8 @@ const StyledDestination = styled.div`
   }
 
   .flex-wrapper {
-    border: 1px solid red;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 
@@ -35,9 +36,9 @@ const StyledDestination = styled.div`
     }
 
     .planet-card-container {
-      width: 50%;
+      width: max-content;
       height: max-content;
-      border: 1px solid red;
+      padding: 0 48px;
     }
   }
 `;

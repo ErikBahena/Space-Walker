@@ -4,20 +4,20 @@ import styled from "styled-components";
 const StyledInnerNavBar = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: flex-start
+  justify-content: flex-start;
 
-  height: 70px;
-  width: 80%;
+  height: 45px;
+  width: 100%;
   margin: 0 auto;
   color: var(--light-purple);
-  
+
   p {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     height: 100%;
-    
+
     margin: 0 0;
     text-transform: uppercase;
     color: var(--white-color);
@@ -33,13 +33,13 @@ const StyledInnerNavBar = styled.nav`
   }
 
   p:nth-of-type(1) {
-   margin: 0 48px;
+    margin-right: 10%;
   }
   p:nth-of-type(2) {
-    margin-right: 48px;
+    margin-right: 10%;
   }
   p:nth-of-type(3) {
-    margin-right: 48px;
+    margin-right: 10%;
   }
 `;
 
