@@ -8,6 +8,7 @@ import styled from "styled-components";
 import NavBar from "./Components/NavBar.js";
 import Home from "./Components/Home/Home.js";
 import Destination from "./Components/Destination/Destination.js";
+import Crew from "./Components/Crew/Crew.js";
 
 // Background Images
 import homeBackground from "./assets/home/background-home-desktop.jpg";
@@ -54,6 +55,10 @@ export default function App() {
         <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
         <Switch>
+          <Route path="/crew">
+            <Crew />
+          </Route>
+
           <Route path="/destination">
             <Destination />
           </Route>
