@@ -30,6 +30,7 @@ const StyledHomeView = styled.main`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 
     a {
       display: flex;
@@ -37,7 +38,7 @@ const StyledHomeView = styled.main`
       justify-content: center;
 
       height: 250px;
-      aspect-ratio: 1;
+      width: 250px;
       margin-right: 5%;
 
       border-radius: 50%;
@@ -60,6 +61,31 @@ const StyledHomeView = styled.main`
       }
     }
   }
+
+  // Tablet Responsiveness
+  @media (max-width: 878px) {
+    div {
+      justify-content: center;
+
+      p {
+        text-align: center;
+        flex: 0 0 100%;
+      }
+      a {
+        margin: 3rem 2rem 0 2rem;
+      }
+    }
+
+    h5 {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    width: 87%;
+  }
+
+  // Mobile Responsiveness
 `;
 
 export default function Home({ setCurrentPage }) {

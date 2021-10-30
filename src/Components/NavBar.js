@@ -59,6 +59,33 @@ const StyledNav = styled.nav`
       margin-right: 48px;
     }
   }
+
+  // Laptop Responsiveness
+  @media (max-width: 1100px) {
+    .nav-links-container {
+      width: 80%;
+    }
+  }
+
+  // Tablet Responsiveness
+
+  @media (max-width: 800px) {
+    .nav-links-container {
+      width: 80%;
+
+      a:nth-of-type(1) {
+        margin-right: 5%;
+      }
+      a:nth-of-type(2) {
+        margin-right: 5%;
+      }
+      a:nth-of-type(3) {
+        margin-right: 5%;
+      }
+    }
+  }
+
+  // Mobile Responsiveness
 `;
 
 export default function NavBar({ currentPage, setCurrentPage }) {

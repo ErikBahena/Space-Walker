@@ -54,6 +54,7 @@ export default function Destination() {
   const [currentPlanet, setCurrentPlanet] = useState({
     name: "moon",
     img: images.moon,
+    
   });
 
   const handlePlanetChange = (planetName) => {
