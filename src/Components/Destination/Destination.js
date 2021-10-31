@@ -30,6 +30,7 @@ const StyledDestination = styled.div`
     width: 100%;
     margin: 0 auto;
     display: flex;
+    max-width: 1200px;
     justify-content: space-between;
 
     img {
@@ -40,9 +41,46 @@ const StyledDestination = styled.div`
     .planet-card-container {
       width: max-content;
       height: max-content;
-      padding: 0 48px;
+      padding-left: 10%;
     }
   }
+
+  @media (max-width: 1156px) {
+    .flex-wrapper {
+      flex-wrap: wrap;
+      border: 1px solid red;
+      margin-bottom: 100%;
+      align-items: center;
+      justify-content: center;
+
+      .planet-card-container {
+        padding: 0;
+        text-align: center;
+
+        nav {
+          justify-content: center;
+        }
+
+        div:nth-of-type(1) div.vectors-container {
+          justify-content: space-between;
+          width: 90%;
+          margin: 0 auto;
+
+          div:nth-of-type(1) {
+            margin-right: 0;
+          }
+        }
+
+        div:nth-of-type(1) h2 > div > div > div {
+          text-align: center;
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  @media (max-width: );
 `;
 
 const images = {

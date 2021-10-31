@@ -7,6 +7,7 @@ import styled from "styled-components";
 const StyledHomeView = styled.main`
   width: 77.063%;
   margin: 13% auto 0 auto;
+  max-width: 1200px;
 
   h5 {
     color: var(--light-purple);
@@ -97,7 +98,6 @@ const StyledHomeView = styled.main`
     }
 
     div {
-      border: 1px solid red;
       height: max-content;
       article {
         h1 {

@@ -12,8 +12,11 @@ import Crew from "./Components/Crew/Crew.js";
 
 // Background Images
 import homeBackground from "./assets/home/background-home-desktop.jpg";
-import homeBackgroundMobile from "./assets/home/background-home-tablet.jpg";
+import homeBackgroundTablet from "./assets/home/background-home-tablet.jpg";
+import homeBackgroundMobile from "./assets/home/background-home-mobile.jpg";
+
 import destinationBackground from "./assets/destination/background-destination-desktop.jpg";
+import destinationBackgroundMobile from "./assets/destination/background-destination-tablet.jpg";
 import crewBackground from "./assets/crew/background-crew-desktop.jpg";
 import technologyBackground from "./assets/technology/background-technology-desktop.jpg";
 
@@ -23,7 +26,7 @@ import useLocalStorage from "./hooks/useLocalStorage.js";
 const StyledApp = styled.div`
   .wrapper {
     height: 100vh;
-    min-height: 700px;
+    min-height: 900px;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -47,14 +50,29 @@ const StyledApp = styled.div`
     background-image: url(${technologyBackground});
   }
 
-  @media (max-width: 878px) {
-    .homeBg {
-      background-image: url(${homeBackgroundMobile});
-    }
-
+  @media (max-width: 1100px) {
     .wrapper {
       padding-bottom: 5rem;
       height: max-content;
+      min-height: 900px;
+    }
+  }
+
+  @media (max-width: 1156px) {
+    .destinationBg {
+      background-image: url(${destinationBackgroundMobile});
+    }
+  }
+
+  @media (max-width: 878px) {
+    .homeBg {
+      background-image: url(${homeBackgroundTablet});
+    }
+  }
+
+  @media (max-width: 425px) {
+    .homeBg {
+      background-image: url(${homeBackgroundMobile});
     }
   }
 `;
