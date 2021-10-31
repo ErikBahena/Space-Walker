@@ -64,6 +64,9 @@ const StyledHomeView = styled.main`
 
   // Tablet Responsiveness
   @media (max-width: 878px) {
+    min-height: 665px;
+    height: 100vh;
+
     div {
       justify-content: center;
 
@@ -86,6 +89,37 @@ const StyledHomeView = styled.main`
   }
 
   // Mobile Responsiveness
+  @media (max-width: 600px) {
+    margin-top: 5%;
+
+    h5 {
+      font-size: 16px;
+    }
+
+    div {
+      border: 1px solid red;
+      height: max-content;
+      article {
+        h1 {
+          font-size: 80px;
+          line-height: 100px;
+          text-align: center;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 25px;
+        }
+      }
+
+      a {
+        height: 150px;
+        width: 150px;
+        font-size: 20px;
+        line-height: 23px;
+      }
+    }
+  }
 `;
 
 export default function Home({ setCurrentPage }) {

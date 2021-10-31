@@ -86,6 +86,11 @@ const StyledNav = styled.nav`
   }
 
   // Mobile Responsiveness
+  @media (max-width: 700px) {
+    .nav-links-container {
+      display: none;
+    }
+  }
 `;
 
 export default function NavBar({ currentPage, setCurrentPage }) {

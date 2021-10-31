@@ -12,6 +12,7 @@ import Crew from "./Components/Crew/Crew.js";
 
 // Background Images
 import homeBackground from "./assets/home/background-home-desktop.jpg";
+import homeBackgroundMobile from "./assets/home/background-home-tablet.jpg";
 import destinationBackground from "./assets/destination/background-destination-desktop.jpg";
 import crewBackground from "./assets/crew/background-crew-desktop.jpg";
 import technologyBackground from "./assets/technology/background-technology-desktop.jpg";
@@ -22,6 +23,7 @@ import useLocalStorage from "./hooks/useLocalStorage.js";
 const StyledApp = styled.div`
   .wrapper {
     height: 100vh;
+    min-height: 700px;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -43,6 +45,17 @@ const StyledApp = styled.div`
   }
   .technologyBg {
     background-image: url(${technologyBackground});
+  }
+
+  @media (max-width: 878px) {
+    .homeBg {
+      background-image: url(${homeBackgroundMobile});
+    }
+
+    .wrapper {
+      padding-bottom: 5rem;
+      height: max-content;
+    }
   }
 `;
 
