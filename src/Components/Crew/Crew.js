@@ -11,16 +11,15 @@ import InnerSelector from "./InnerSelector.js";
 
 const StyledCrew = styled.section`
   width: 77.063%;
-  margin: 5% auto 0 auto;
-
-  position: fixed;
-  left: 50%;
+  margin: auto auto;
+  position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
-  transform: translateX(-50%);
 
   h5 {
     color: var(--white-color);
-    margin: 0 0 154px 0;
+    margin: 76px 0;
 
     b {
       opacity: 0.5;
@@ -30,15 +29,14 @@ const StyledCrew = styled.section`
   .flex-wrapper {
     display: flex;
     justify-content: space-between;
-    position: relative;
     min-height: 628.13px;
-
+    position: relative;
     img {
+      width: max-content;
+      height: max-content;
       position: absolute;
       bottom: 0;
       right: 0;
-      height: max-content;
-      width: max-content;
     }
   }
 `;

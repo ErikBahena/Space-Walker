@@ -22,6 +22,7 @@ const StyledInnerSelector = styled.div`
   div.active,
   div:hover {
     opacity: 1;
+    cursor: pointer;
   }
 `;
 
