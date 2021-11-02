@@ -20,7 +20,7 @@ const StyledDestination = styled.div`
 
   h5 {
     color: var(--white-color);
-    margin: 76px 0;
+    margin: 8% 0;
 
     b {
       opacity: 0.5;
@@ -44,6 +44,13 @@ const StyledDestination = styled.div`
       @media (max-width: 1250px) {
         height: 350px;
       }
+    }
+  }
+
+  // Laptop Responsiveness
+  @media (max-width: 1440px) {
+    h5 {
+      margin: 2.8% 0;
     }
   }
 
