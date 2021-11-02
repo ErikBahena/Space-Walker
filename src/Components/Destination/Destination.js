@@ -14,8 +14,9 @@ import InnerNavBar from "./InnerNavBar";
 import PlanetCard from "./PlanetCard/PlanetCard.js";
 
 const StyledDestination = styled.div`
-  width: 77.063%;
+  width: 85%;
   margin: 0 auto;
+  max-width: 1200px;
 
   h5 {
     color: var(--white-color);
@@ -27,31 +28,48 @@ const StyledDestination = styled.div`
   }
 
   .flex-wrapper {
-    width: 100%;
-    margin: 0 auto;
     display: flex;
-    max-width: 1200px;
     justify-content: space-between;
+
+    .planet-card-container {
+      margin-right: 5%;
+      @media (max-width: 1156px) {
+        margin-right: 0;
+      }
+    }
 
     img {
       height: 445px;
-      aspect-ratio: 1;
-    }
-
-    .planet-card-container {
-      width: max-content;
-      height: max-content;
-      padding-left: 10%;
+      margin: auto 0;
+      @media (max-width: 1250px) {
+        height: 350px;
+      }
     }
   }
 
-  @media (max-width: 1156px) {
+  // tablet responsiveness
+  @media (max-width: 1020px) {
+    h5 {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 3.375px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
     .flex-wrapper {
       flex-wrap: wrap;
-      border: 1px solid red;
-      margin-bottom: 100%;
-      align-items: center;
       justify-content: center;
+
+      img {
+        margin-top: 7.5%;
+        margin-bottom: 6.5%;
+        height: 300px;
+      }
+
+      .break {
+        flex-basis: 100%;
+      }
 
       .planet-card-container {
         padding: 0;
@@ -61,9 +79,26 @@ const StyledDestination = styled.div`
           justify-content: center;
         }
 
+        hr {
+          max-width: 100%;
+          margin-top: 49px;
+          margin-bottom: 28px;
+        }
+
+        div:nth-of-type(1) p {
+          max-width: 573px;
+          font-size: 16px;
+          line-height: 28px;
+          margin: 0;
+        }
+
+        div > div > p.subh2 {
+          margin-top: 0;
+        }
+
         div:nth-of-type(1) div.vectors-container {
           justify-content: space-between;
-          width: 90%;
+          width: 70%;
           margin: 0 auto;
 
           div:nth-of-type(1) {
@@ -72,15 +107,27 @@ const StyledDestination = styled.div`
         }
 
         div:nth-of-type(1) h2 > div > div > div {
-          text-align: center;
           width: 100%;
           margin: 0 auto;
+          font-size: 80px;
+          line-height: 92px;
+          height: max-content;
         }
       }
     }
   }
 
-  @media (max-width: );
+  // Mobile Responsiveness
+  @media (max-width: 425px) {
+    .flex-wrapper {
+      img {
+        height: 170px;
+      }
+
+      .planet-card-container {
+      }
+    }
+  }
 `;
 
 const images = {
@@ -108,6 +155,8 @@ export default function Destination() {
 
       <div className="flex-wrapper">
         <img src={currentPlanet.img} alt={"the planet " + currentPlanet.name} />
+
+        <div className="break"></div>
 
         <div className="planet-card-container">
           <InnerNavBar handlePlanetChange={handlePlanetChange} />

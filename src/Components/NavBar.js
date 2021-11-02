@@ -70,6 +70,7 @@ const StyledNav = styled.nav`
   // Tablet Responsiveness
 
   @media (max-width: 800px) {
+    padding-top: 0;
     .nav-links-container {
       width: 80%;
 

@@ -113,6 +113,8 @@ const StyledHomeView = styled.main`
       a {
         height: 150px;
         width: 150px;
+        margin-left: 0;
+        margin-right: 0;
         font-size: 20px;
         line-height: 23px;
       }
