@@ -6,7 +6,8 @@ import styled from "styled-components";
 
 const StyledHomeView = styled.main`
   width: 77.063%;
-  margin: 13% auto 0 auto;
+  margin: 13vh auto 0 auto;
+
   max-width: 1200px;
 
   h5 {
@@ -40,7 +41,7 @@ const StyledHomeView = styled.main`
 
       height: 250px;
       width: 250px;
-      margin-right: 5%;
+      margin-left: 80px;
 
       border-radius: 50%;
       border: none;
@@ -64,19 +65,21 @@ const StyledHomeView = styled.main`
   }
 
   // Tablet Responsiveness
-  @media (max-width: 878px) {
-    min-height: 665px;
-    height: 100vh;
-
+  @media (max-width: 1013px) {
     div {
       justify-content: center;
+
+      .break {
+        flex-basis: 100%;
+        height: 0;
+      }
 
       p {
         text-align: center;
         flex: 0 0 100%;
       }
       a {
-        margin: 3rem 2rem 0 2rem;
+        margin: 10% 2rem 0 2rem;
       }
     }
 
@@ -85,20 +88,15 @@ const StyledHomeView = styled.main`
     }
   }
 
-  @media (max-width: 1000px) {
-    width: 87%;
-  }
-
   // Mobile Responsiveness
   @media (max-width: 600px) {
-    margin-top: 5%;
+    margin-top: 3%;
 
     h5 {
       font-size: 16px;
     }
 
     div {
-      height: max-content;
       article {
         h1 {
           font-size: 80px;
@@ -137,6 +135,8 @@ export default function Home({ setCurrentPage }) {
             world experience!
           </p>
         </article>
+
+        <div className="break"></div>
 
         <Link
           onClick={() => {

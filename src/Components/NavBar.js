@@ -10,10 +10,10 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
 
-  padding-left: 55px;
-  padding-top: 40px;
+  padding-left: 6%;
+  padding-top: 2%;
 
-  height: 96px;
+  height: max-content;
   width: 100%;
 
   .nav-links-container {
@@ -21,7 +21,7 @@ const StyledNav = styled.nav`
     align-items: center;
     justify-content: center;
 
-    height: inherit;
+    height: 96px;
     width: 57.6388%;
 
     background: rgba(255, 255, 255, 0.04);
@@ -87,6 +87,10 @@ const StyledNav = styled.nav`
 
   // Mobile Responsiveness
   @media (max-width: 700px) {
+    .nav-logo {
+      height: 40px;
+      width: 40px;
+    }
     .nav-links-container {
       display: none;
     }
