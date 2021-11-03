@@ -12,7 +12,7 @@ const StyledNav = styled.nav`
   align-items: center;
 
   padding-left: 6%;
-  padding-top: 2%;
+  padding-top: 2.5rem;
 
   height: max-content;
   width: 100%;
@@ -89,8 +89,7 @@ const StyledNav = styled.nav`
 
   // Mobile Responsiveness
   @media (max-width: 700px) {
-    padding-top: 6%;
-
+    padding-top: 1.5rem;
     .nav-logo {
       height: 40px;
       width: 40px;

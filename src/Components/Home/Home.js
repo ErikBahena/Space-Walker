@@ -56,10 +56,7 @@ const StyledHomeView = styled.main`
       transition: 0.4s ease-out;
 
       &:hover {
-        // border: 30px solid rgba(255, 255, 255, 0.1);
-        // -webkit-background-clip: padding-box; /* for Safari */
-        // background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
-        transform: scale(1.1);
+        box-shadow: 0px 0 0px 50px rgba(255, 255, 255, 0.29);
       }
     }
   }

@@ -47,6 +47,7 @@ const StyledApp = styled.div`
   }
   .crewBg {
     background-image: url(${crewBackground});
+    padding-bottom: 0;
   }
   .technologyBg {
     background-image: url(${technologyBackground});

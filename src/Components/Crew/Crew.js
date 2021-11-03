@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import douglas from "../../assets/crew/image-douglas-hurley.png";
@@ -8,18 +8,19 @@ import anousheh from "../../assets/crew/image-anousheh-ansari.png";
 
 import CrewCard from "./CrewCard/CrewCard.js";
 import InnerSelector from "./InnerSelector.js";
+let navHeightVal;
 
 const StyledCrew = styled.section`
-  width: 77.063%;
-  margin: auto auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 85%;
+  margin: 0 auto;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 136px);
 
   h5 {
     color: var(--white-color);
-    margin: 76px 0;
+    margin: 5.8% 0 5% 0;
 
     b {
       opacity: 0.5;
@@ -27,18 +28,25 @@ const StyledCrew = styled.section`
   }
 
   .flex-wrapper {
+    width: 100%;
+    margin-top: auto;
+    align-self: flex-end;
     display: flex;
     justify-content: space-between;
-    min-height: 628.13px;
-    position: relative;
+    min-height: 700px;
+
     img {
-      width: max-content;
-      height: max-content;
-      position: absolute;
+      width: auto;
+      max-height: 100%;
+      position: relative;
       bottom: 0;
       right: 0;
     }
   }
+
+  // Tablet Responsiveness
+
+  // @media (max-width: )
 `;
 
 const images = {
@@ -53,6 +61,14 @@ export default function Crew() {
     name: "douglas",
     img: images.douglas,
   });
+
+  useEffect(() => {
+    const nav = document.querySelector("nav:nth-of-type(1)");
+
+    nav.addEventListener("change", function (e) {
+      console.log(e);
+    });
+  }, []);
 
   const handleCrewChange = (newCrewMemberName) => {
     setCurrentCrewMember({
@@ -74,6 +90,7 @@ export default function Crew() {
             currentCrewMember={currentCrewMember.name}
           />
         </div>
+        <div className="break"></div>
 
         <img
           src={currentCrewMember.img}
