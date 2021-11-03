@@ -114,13 +114,27 @@ const StyledDestination = styled.div`
         div > div > p.subh1 {
           white-space: nowrap;
           margin-bottom: 0;
-          margin-top: 9%;
+          margin-top: 12px;
         }
 
         div:nth-of-type(1) div.vectors-container {
           justify-content: space-between;
           width: 70%;
           margin: 0 auto;
+
+          @media (max-width: 485px) {
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-bottom: 3%;
+
+            .break {
+              flex-basis: 100%;
+            }
+
+            div:nth-of-type(1) {
+              margin-bottom: 17%;
+            }
+          }
 
           div:nth-of-type(1) {
             margin-right: 0;
@@ -174,22 +188,6 @@ const StyledDestination = styled.div`
         hr {
           width: 80%;
           margin: initial auto;
-        }
-
-        // AVG DIST & EST TRAVEL TIME CONTAINER
-        div:nth-of-type(1) div.vectors-container {
-          flex-wrap: wrap;
-          justify-content: center;
-          padding-bottom: 3%;
-
-          .break {
-            height: 0;
-            flex-basis: 100%;
-          }
-
-          div:nth-of-type(1) {
-            margin-bottom: 17%;
-          }
         }
       }
     }
