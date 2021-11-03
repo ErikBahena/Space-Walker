@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import NavLogo from "../assets/shared/logo.svg";
 
 const StyledNav = styled.nav`
-  // Desktop View
+  max-width: 2000px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,6 +89,8 @@ const StyledNav = styled.nav`
 
   // Mobile Responsiveness
   @media (max-width: 700px) {
+    padding-top: 6%;
+
     .nav-logo {
       height: 40px;
       width: 40px;

@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch, Route } from "react-router";
+import React, { useEffect } from "react";
+import { Switch, Route, useHistory, Redirect } from "react-router-dom";
 
 // Style Imports
 import styled from "styled-components";
@@ -77,6 +77,12 @@ const StyledApp = styled.div`
 export default function App() {
   const [currentPage, setCurrentPage] = useLocalStorage("currentPage", "home");
 
+  const { push } = useHistory();
+
+  useEffect(() => {
+    push(`/${currentPage}`);
+  }, []);
+
   return (
     <StyledApp>
       <div className={`wrapper ${currentPage + "Bg"}`}>
@@ -91,8 +97,12 @@ export default function App() {
             <Destination />
           </Route>
 
-          <Route exact path="/">
+          <Route path="/home">
             <Home setCurrentPage={setCurrentPage} />
+          </Route>
+
+          <Route path="/">
+            <Redirect to="/home" />
           </Route>
         </Switch>
       </div>

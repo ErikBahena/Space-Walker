@@ -16,11 +16,11 @@ import PlanetCard from "./PlanetCard/PlanetCard.js";
 const StyledDestination = styled.div`
   width: 85%;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1300px;
 
   h5 {
     color: var(--white-color);
-    margin: 8% 0;
+    margin: 5.8% 0 5% 0;
 
     b {
       opacity: 0.5;
@@ -30,11 +30,16 @@ const StyledDestination = styled.div`
   .flex-wrapper {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
     .planet-card-container {
       margin-right: 5%;
       @media (max-width: 1156px) {
         margin-right: 0;
+      }
+
+      hr {
+        width: 100%;
       }
     }
 
@@ -50,7 +55,7 @@ const StyledDestination = styled.div`
   // Laptop Responsiveness
   @media (max-width: 1440px) {
     h5 {
-      margin: 2.8% 0;
+      margin: 3% 0 2.5% 0;
     }
   }
 
@@ -61,7 +66,7 @@ const StyledDestination = styled.div`
       line-height: 24px;
       letter-spacing: 3.375px;
       margin-bottom: 0;
-      text-align: center;
+      margin-top: 6%;
     }
 
     .flex-wrapper {
@@ -84,15 +89,17 @@ const StyledDestination = styled.div`
 
         nav {
           justify-content: center;
+          width: max-content;
+          margin-bottom: 6%;
         }
 
         hr {
-          max-width: 100%;
           margin-top: 49px;
           margin-bottom: 28px;
         }
 
-        div:nth-of-type(1) p {
+        // description paragraph
+        div:nth-of-type(1) .p-description {
           max-width: 573px;
           font-size: 16px;
           line-height: 28px;
@@ -100,7 +107,14 @@ const StyledDestination = styled.div`
         }
 
         div > div > p.subh2 {
-          margin-top: 0;
+          margin: 0;
+          white-space: nowrap;
+        }
+
+        div > div > p.subh1 {
+          white-space: nowrap;
+          margin-bottom: 0;
+          margin-top: 9%;
         }
 
         div:nth-of-type(1) div.vectors-container {
@@ -113,7 +127,7 @@ const StyledDestination = styled.div`
           }
         }
 
-        div:nth-of-type(1) h2 > div > div > div {
+        div:nth-of-type(1) h2 {
           width: 100%;
           margin: 0 auto;
           font-size: 80px;
@@ -126,12 +140,57 @@ const StyledDestination = styled.div`
 
   // Mobile Responsiveness
   @media (max-width: 425px) {
+    width: 100%;
+    // Pick your Destination SubTitle
+    h5 {
+      text-align: center;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 2.7px;
+    }
+
     .flex-wrapper {
+      // Moon Image
       img {
         height: 170px;
       }
 
       .planet-card-container {
+        // Moon Title
+        div:nth-of-type(1) h2 {
+          font-size: 56px;
+          line-height: 64px;
+          margin-top: 20px;
+        }
+
+        // description paragraph
+        div:nth-of-type(1) .p-description {
+          font-size: 15px;
+          width: 88%;
+          margin: 0 auto;
+          line-height: 25px;
+        }
+
+        hr {
+          width: 80%;
+          margin: initial auto;
+        }
+
+        // AVG DIST & EST TRAVEL TIME CONTAINER
+        div:nth-of-type(1) div.vectors-container {
+          flex-wrap: wrap;
+          justify-content: center;
+          padding-bottom: 3%;
+
+          .break {
+            height: 0;
+            flex-basis: 100%;
+          }
+
+          div:nth-of-type(1) {
+            margin-bottom: 17%;
+          }
+        }
       }
     }
   }

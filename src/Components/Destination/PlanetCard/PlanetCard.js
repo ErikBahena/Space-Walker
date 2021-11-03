@@ -49,15 +49,8 @@ export default function PlanetCard({ planetName }) {
 
   return (
     <StyledPlanetCard>
-      <h2>
-        <TextTransition
-          text={data.title}
-          springConfig={presets.slow}
-          noOverflow={true}
-          direction="down"
-        />
-      </h2>
-      <p>{planetsData[planetName].description}</p>
+      <h2>{data.title}</h2>
+      <p className="p-description">{planetsData[planetName].description}</p>
 
       <hr></hr>
 
@@ -66,6 +59,8 @@ export default function PlanetCard({ planetName }) {
           <p className="subh2">Avg. Distance</p>
           <p className="subh1">{planetsData[planetName].averageDistance}</p>
         </div>
+
+        <div className="break"></div>
 
         <div>
           <p className="subh2">Est. Travel Time</p>
