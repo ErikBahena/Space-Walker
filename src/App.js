@@ -44,10 +44,16 @@ const StyledApp = styled.div`
   }
   .destinationBg {
     background-image: url(${destinationBackground});
+    padding-bottom: 0;
   }
   .crewBg {
     background-image: url(${crewBackground});
     padding-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 136px 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
   }
   .technologyBg {
     background-image: url(${technologyBackground});

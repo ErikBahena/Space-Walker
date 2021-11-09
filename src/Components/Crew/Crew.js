@@ -8,19 +8,24 @@ import anousheh from "../../assets/crew/image-anousheh-ansari.png";
 
 import CrewCard from "./CrewCard/CrewCard.js";
 import InnerSelector from "./InnerSelector.js";
-let navHeightVal;
 
 const StyledCrew = styled.section`
   width: 85%;
   margin: 0 auto;
   max-width: 1300px;
+
+  grid-area: 2 / 1 / 3 / 2;
+  align-self: end;
+
+  height: 100%;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 136px);
+  justify-content: flex-end;
 
   h5 {
     color: var(--white-color);
-    margin: 5.8% 0 5% 0;
+    margin-top: auto;
+    margin-bottom: auto;
 
     b {
       opacity: 0.5;
@@ -28,19 +33,19 @@ const StyledCrew = styled.section`
   }
 
   .flex-wrapper {
-    width: 100%;
-    margin-top: auto;
-    align-self: flex-end;
     display: flex;
     justify-content: space-between;
-    min-height: 700px;
+
+    max-height: 501px;
+    align-items: flex-end;
+
+    .crew-member-container {
+      height: max-content;
+    }
 
     img {
       width: auto;
-      max-height: 100%;
-      position: relative;
-      bottom: 0;
-      right: 0;
+      height: 100%;
     }
   }
 
