@@ -5,10 +5,10 @@ import { Switch, Route, useHistory, Redirect } from "react-router-dom";
 import styled from "styled-components";
 
 // Components
-import NavBar from "./Components/NavBar.js";
-import Home from "./Components/Home/Home.js";
-import Destination from "./Components/Destination/Destination.js";
-import Crew from "./Components/Crew/Crew.js";
+import NavBar from "./components/NavBar.js";
+import Home from "./components/Home/Home.js";
+import Destination from "./components/Destination/Destination.js";
+import Crew from "./components/Crew/Crew.js";
 
 // Background Images
 import homeBackground from "./assets/home/background-home-desktop.jpg";
