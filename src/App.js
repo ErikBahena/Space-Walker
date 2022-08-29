@@ -1,27 +1,27 @@
-import React, { useEffect } from "react";
-import { Switch, Route, useHistory, Redirect } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Switch, Route, useHistory, Redirect } from 'react-router-dom';
 
 // Style Imports
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // Components
-import NavBar from "./components/NavBar.js";
-import Home from "./components/Home/Home.js";
-import Destination from "./components/Destination/Destination.js";
-import Crew from "./components/Crew/Crew.js";
+import NavBar from './components/NavBar.js';
+import Home from './components/Home/Home.js';
+import Destination from './components/Destination/Destination.js';
+import Crew from './components/Crew/Crew.js';
 
 // Background Images
-import homeBackground from "./assets/home/background-home-desktop.jpg";
-import homeBackgroundTablet from "./assets/home/background-home-tablet.jpg";
-import homeBackgroundMobile from "./assets/home/background-home-mobile.jpg";
+import homeBackground from './assets/home/background-home-desktop.jpg';
+import homeBackgroundTablet from './assets/home/background-home-tablet.jpg';
+import homeBackgroundMobile from './assets/home/background-home-mobile.jpg';
 
-import destinationBackground from "./assets/destination/background-destination-desktop.jpg";
-import destinationBackgroundTablet from "./assets/destination/background-destination-tablet.jpg";
-import crewBackground from "./assets/crew/background-crew-desktop.jpg";
-import technologyBackground from "./assets/technology/background-technology-desktop.jpg";
+import destinationBackground from './assets/destination/background-destination-desktop.jpg';
+import destinationBackgroundTablet from './assets/destination/background-destination-tablet.jpg';
+import crewBackground from './assets/crew/background-crew-desktop.jpg';
+import technologyBackground from './assets/technology/background-technology-desktop.jpg';
 
 // Hooks
-import useLocalStorage from "./hooks/useLocalStorage.js";
+import useLocalStorage from './hooks/useLocalStorage.js';
 
 const StyledApp = styled.div`
   .wrapper {
@@ -82,34 +82,22 @@ const StyledApp = styled.div`
 `;
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useLocalStorage("currentPage", "home");
-
-  const { push } = useHistory();
-
-  useEffect(() => {
-    push(`/${currentPage}`);
-  }, []);
-
   return (
     <StyledApp>
-      <div className={`wrapper ${currentPage + "Bg"}`}>
-        <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <div className={`wrapper ${'home' + 'Bg'}`}>
+        <NavBar />
 
         <Switch>
-          <Route path="/crew">
+          <Route exact path='/crew'>
             <Crew />
           </Route>
 
-          <Route path="/destination">
+          <Route exact path='/destination'>
             <Destination />
           </Route>
 
-          <Route path="/home">
-            <Home setCurrentPage={setCurrentPage} />
-          </Route>
-
-          <Route path="/">
-            <Redirect to="/home" />
+          <Route exact path='/home'>
+            <Home />
           </Route>
         </Switch>
       </div>

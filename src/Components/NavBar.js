@@ -1,12 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link, useHistory } from 'react-router-dom';
 
-import NavLogo from "../assets/shared/logo.svg";
+import NavLogo from '../assets/shared/logo.svg';
+import HamburgerIcon from '../assets/shared/icon-hamburger.svg';
 
 const StyledNav = styled.nav`
-  max-width: 2000px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,58 +16,8 @@ const StyledNav = styled.nav`
   height: max-content;
   width: 100%;
 
-  #menuIcon {
-    display: flex;
-    flex-direction: column;
-    transform: scale(0.7);
-
-    width: 70px;
-    margin-right: 4%;
-    cursor: pointer;
-
-    @media (min-width: 701px) {
-      display: none;
-    }
-
-    span {
-      background: #fff;
-      border-radius: 10px;
-      height: 4px;
-      margin: 7px 0;
-      transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-    }
-
-    span:nth-of-type(1) {
-      width: 50%;
-    }
-
-    span:nth-of-type(2) {
-      width: 100%;
-    }
-
-    span:nth-of-type(3) {
-      width: 75%;
-    }
-
-    input[type="checkbox"] {
-      display: none;
-    }
-
-    input[type="checkbox"]:checked ~ span:nth-of-type(1) {
-      transform-origin: bottom;
-      transform: rotatez(45deg) translate(8px, 0px);
-    }
-
-    input[type="checkbox"]:checked ~ span:nth-of-type(2) {
-      transform-origin: top;
-      transform: rotatez(-45deg);
-    }
-
-    input[type="checkbox"]:checked ~ span:nth-of-type(3) {
-      transform-origin: bottom;
-      width: 50%;
-      transform: translate(30px, -11px) rotatez(45deg);
-    }
+  .menuIcon {
+    display: none;
   }
 
   .nav-links-container {
@@ -84,32 +33,6 @@ const StyledNav = styled.nav`
 
     .navText {
       text-transform: uppercase;
-    }
-
-    .close-menu-btn {
-      display: none;
-      transform: scale(3);
-      margin-left: 10px;
-
-      .chevron::before {
-        border-style: solid;
-        border-color: white;
-        border-width: 0.15em 0.15em 0 0;
-        content: "";
-        display: inline-block;
-        height: 0.45em;
-        left: 0.15em;
-        position: relative;
-        top: 0.15em;
-        transform: rotate(-45deg);
-        vertical-align: top;
-        width: 0.45em;
-      }
-
-      .chevron.right:before {
-        left: 0;
-        transform: rotate(45deg);
-      }
     }
 
     a {
@@ -149,9 +72,7 @@ const StyledNav = styled.nav`
   }
 
   // Tablet Responsiveness
-
   @media (max-width: 800px) {
-    padding-top: 0;
     .nav-links-container {
       width: 80%;
 
@@ -169,133 +90,147 @@ const StyledNav = styled.nav`
 
   // Mobile Responsiveness
   @media (max-width: 700px) {
-    padding-top: 1.5rem;
+    padding: 20px 5%;
+    margin-bottom: 40px;
 
     .nav-logo {
-      height: 40px;
-      width: 40px;
+      height: 30px;
+      width: 30px;
+    }
+
+    .menuIcon {
+      display: initial;
+      transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
     }
 
     .nav-links-container {
       display: none;
     }
 
-    .nav-links-container.responsive-active {
-      .close-menu-btn {
-        display: unset;
-        align-self: flex-start;
-      }
-
-      position: absolute;
-      z-index: 999;
+    .nav-links-container.display-mobile-nav {
       display: flex;
       flex-direction: column;
-      top: 0;
 
-      right: 0;
-
-      height: 100%;
-
+      height: 100vh;
+      min-height: 550px;
       gap: 10%;
 
-      a {
-        height: unset;
-        width: 70%;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      right: 0;
 
+      .close-menu-btn {
+        display: flex;
+        align-self: flex-start;
+        margin-left: 2em;
+
+        transform: scale(2);
+        margin-left: 10px;
+
+        .chevron::before {
+          border-style: solid;
+          border-color: white;
+          border-width: 0.15em 0.15em 0 0;
+          content: '';
+          display: inline-block;
+          height: 0.45em;
+          left: 0.15em;
+          position: relative;
+          top: 0.15em;
+          transform: rotate(-45deg);
+          vertical-align: top;
+          width: 0.45em;
+        }
+
+        .chevron.right:before {
+          left: 0;
+          transform: rotate(45deg);
+        }
+      }
+
+      a {
         display: flex;
         justify-content: flex-start;
 
-        padding: 0 1em;
+        height: unset;
+        width: 70%;
+
         margin-right: 0px !important;
       }
     }
   }
 `;
 
-export default function NavBar({ currentPage, setCurrentPage }) {
-  const changePage = (e) => {
-    const clickedOnLinkName = e.target.closest("a")?.dataset.name;
-    if (!clickedOnLinkName) return;
+export default function NavBar() {
+  const [mobileNavActive, setMobileNavActive] = React.useState(false);
+  const { location } = useHistory();
 
-    setCurrentPage(clickedOnLinkName);
+  const toggleNav = () => setMobileNavActive(!mobileNavActive);
 
-    // adding and removing classes to activate the nav links
-    const clickedOnLink = e.target.closest("a");
-    clickedOnLink.classList.add("active-nav-link");
-
-    const allOtherLinks = e.target
-      .closest(".nav-links-container")
-      .querySelectorAll("a");
-
-    allOtherLinks.forEach((link) => {
-      if (clickedOnLink !== link) link.classList.remove("active-nav-link");
-    });
-  };
-
-  const toggleNav = () => {
-    const nav = document.querySelector(".nav-links-container");
-    nav.classList.toggle("responsive-active");
-    console.log("being called");
-
-    console.log(nav);
-  };
+  console.log(location.pathname);
 
   return (
     <StyledNav>
-      <Link to="/">
-        <img className="nav-logo" src={NavLogo} alt="home page link" />
+      <Link to='/home'>
+        <img className='nav-logo' src={NavLogo} alt='home page link' />
       </Link>
 
-      <label htmlFor="check" id="menuIcon">
-        <input type="checkbox" id="check" onClick={toggleNav} />
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
+      <img
+        src={HamburgerIcon}
+        alt='hamburger menu'
+        className='menuIcon'
+        onClick={toggleNav}
+      />
 
-      <div onClick={changePage} className="nav-links-container">
-        <div className="close-menu-btn">
-          <span class="chevron right"></span>
-        </div>
+      <div
+        className={`nav-links-container ${
+          mobileNavActive ? 'display-mobile-nav' : ''
+        }`}
+      >
+        {mobileNavActive && (
+          <div className='close-menu-btn' onClick={toggleNav}>
+            <span className='chevron right'></span>
+          </div>
+        )}
 
         <Link
-          to="/"
-          data-name="home"
-          //   if the current page is the the corresponding link then add that classname
-          className={currentPage === "home" ? "active-nav-link" : null}
+          to='/home'
+          className={location.pathname === '/home' ? 'active-nav-link' : ''}
         >
-          <p className="navText">
-            <b className="navBold">00</b> Home
+          <p className='navText'>
+            <b className='navBold'>00</b> Home
           </p>
         </Link>
 
         <Link
-          to="/destination"
-          data-name="destination"
-          className={currentPage === "destination" ? "active-nav-link" : null}
+          to='/destination'
+          className={
+            location.pathname === '/destination' ? 'active-nav-link' : null
+          }
         >
-          <p className="navText">
-            <b className="navBold">01</b> Destination
+          <p className='navText'>
+            <b className='navBold'>01</b> Destination
           </p>
         </Link>
 
         <Link
-          to="/crew"
-          data-name="crew"
-          className={currentPage === "crew" ? "active-nav-link" : null}
+          to='/crew'
+          className={location.pathname === '/crew' ? 'active-nav-link' : null}
         >
-          <p className="navText">
-            <b className="navBold">02</b> Crew
+          <p className='navText'>
+            <b className='navBold'>02</b> Crew
           </p>
         </Link>
 
         <Link
-          to="/technology"
-          data-name="technology"
-          className={currentPage === "technology" ? "active-nav-link" : null}
+          to='/technology'
+          className={
+            location.pathname === '/technology' ? 'active-nav-link' : null
+          }
         >
-          <p className="navText">
-            <b className="navBold">03</b> Technology
+          <p className='navText'>
+            <b className='navBold'>03</b> Technology
           </p>
         </Link>
       </div>
